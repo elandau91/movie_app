@@ -10,7 +10,4 @@ class UsersController < ApplicationController
 
 
 
-
-
-
 end
