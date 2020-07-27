@@ -6,6 +6,33 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "themoviedb"
+
+# Tmdb::Api.key("a9906c88d9a679228d60881374c08beb")
+# Tmdb::Api.language("en")
+
+# def search (input)
+#     @search = Tmdb::Search.new
+#     @search.resource('movie') # determines type of resource
+#     @search.query('input') # the query to search against
+#     @movie = @search.fetch 
+
+#     self.title = @movie[0]["original_title"]
+#     self.poster =  @movie[0]["poster_path"]
+#     self.release_date = @movie[0]["release_date"]
+# end
+
+#Access ID for faster referencing
+# @movie[0]["id"]
+
+# movie = Tmdb::Movie.detail(550)
+
+# movie["original_title"]
+
+# # etc.
+
+
+
 User.destroy_all
 Movie.destroy_all
 Review.destroy_all
