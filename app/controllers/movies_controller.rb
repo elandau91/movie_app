@@ -3,6 +3,7 @@ Tmdb::Api.language("en")
 
 class MoviesController < ApplicationController
 
+ eli_edits
     def search
         @query = params[:query]
 
@@ -26,5 +27,13 @@ class MoviesController < ApplicationController
 
     end
 
+
+    def index 
+        @movies = Movie.all
+    end
+
+    def show
+        @movie = Movie.find(params[:id])
+    end
 
 end
