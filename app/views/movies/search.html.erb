@@ -1,0 +1,16 @@
+<h1>Movie Search</h1>
+
+<%= form_tag(movies_search_path, :method => "get") do %>
+    <%= search_field_tag :query, params[:query], placeholder: "Search" %>
+    <%= button_tag "Submit", :name => nil %>
+<% end%>
+
+<% if @results %>
+<ul>
+    <% @results.first(5).each do |result|%>
+        <li>Film: <%= link_to result["original_title"], movie_path(result["original_title"]) %> </li>
+        <li>Release Date: <%= result["release_date"] %></li>
+        <br>
+    <% end%>
+</ul>
+<% end%>
