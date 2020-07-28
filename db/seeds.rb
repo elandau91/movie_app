@@ -27,7 +27,7 @@ require "themoviedb"
 
 # movie = Tmdb::Movie.detail(550)
 
-# movie["original_title"]
+# movie["original_title"]rrr
 
 # # etc.
 
