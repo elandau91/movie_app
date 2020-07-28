@@ -1,5 +1,15 @@
 <h1> List of Movies </h1>
 
+<h3>Search Movies</h3>
+<%= form_tag(movies_search_path, :method => "get") do %>
+    <%= search_field_tag :query, params[:query], placeholder: "Search" %>
+    <%= button_tag "Submit", :name => nil %>
+<% end%>
+<br>
+<br>
+
+<h3>Movie List</h3>
+
 <table>
     <thead>
         <tr>
@@ -15,7 +25,7 @@
             <tr>
                 <td><%= link_to movie.title, movie_path(movie) %></td>
                 <td><%= movie.release_date %></td>
-                <td><img src=<%= movie.poster %>></td>
+                <td><img src="<%="https://image.tmdb.org/t/p/w200#{movie.poster}"%>"></td>
             </tr>
         <% end %> 
     </tbody>

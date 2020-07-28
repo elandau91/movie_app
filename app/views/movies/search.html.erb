@@ -8,8 +8,10 @@
 <% if @results %>
 <ul>
     <% @results.first(5).each do |result|%>
-        <li>Film: <%= link_to result["original_title"], movie_path(result["original_title"]) %> </li>
+        <li>Film: <%= link_to result["original_title"], "/movies/#{result["id"]}/?name=#{result["original_title"]}" %> </li>
         <li>Release Date: <%= result["release_date"] %></li>
+        <p><img src="<%="https://image.tmdb.org/t/p/w200#{result["poster_path"]}"%>" alt="film poster"></p>
+        <br>
         <br>
     <% end%>
 </ul>
