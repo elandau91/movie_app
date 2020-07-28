@@ -12,8 +12,20 @@ class Movie < ApplicationRecord
         @search.query(input) 
         @movie = @search.fetch 
 #byebug
-        self.title = @movie[0]["original_title"]
-        self.poster =  @movie[0]["poster_path"]
-        self.release_date = @movie[0]["release_date"]
+        @movie.first(1).each do |movie|
+            self.title = movie["original_title"]
+            self.poster =  movie["poster_path"]
+            self.release_date = movie["release_date"]
+        end
+
     end
+
+
+    def img_config 
+        configuration = Tmdb::Configuration.new
+        configuration.base_url
+        configuration.secure_base_url
+        configuration.poster_sizes
+    end
+
 end

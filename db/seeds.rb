@@ -41,9 +41,31 @@ Review.destroy_all
     User.create(name: Faker::FunnyName.name, username: Faker::Science.element)
 end
 
-5.times do
-    Movie.create(title: Faker::Movie.title, release_date: Faker::Number.number(digits: 6)  , poster: Faker::Avatar.image )
-end
+
+m1 = Movie.new
+m1.search(Faker::Movie.title)
+m1.save
+
+m2 = Movie.new
+m2.search(Faker::Movie.title)
+m2.save
+
+m3 = Movie.new
+m3.search(Faker::Movie.title)
+m3.save
+
+m4 = Movie.new
+m4.search(Faker::Movie.title)
+m4.save
+
+m5 = Movie.new
+m5.search(Faker::Movie.title)
+m5.save
+
+
+
+# Movie.create(title: Faker::Movie.title, release_date: Faker::Number.number(digits: 6)  , poster: Faker::Avatar.image )
+
 
 20.times do
     Review.create(user_id: User.all.sample.id, movie_id: Movie.all.sample.id, rating: rand(1..10), content: Faker::Movie.quote, favorite: Faker::Boolean.boolean)
