@@ -1,12 +1,15 @@
 <h1> Movie: <%=@movie.title%> </h1>
 
-<p><img src=<%= @movie.poster %>></p>
-<p>Title: <%= @movie.title %></p>
-<p>Release date: <%= @movie.release_date %></p>
-<p>Average rating:</p>
-    <% total = 0 %>
-    <% @movie.reviews.each do |review| %>
-        <% total += review.rating %> 
-    <% end %> 
+    <p><img src="<%="https://image.tmdb.org/t/p/w200#{@movie.poster}"%>"></p>
+    <p>Title: <%= @movie.title %></p>
+    <p>Release date: <%= @movie.release_date %></p>
+    <p>Average rating:</p>
+        <% total = 0 %>
+        <% @movie.reviews.each do |review| %>
+            <% total += review.rating %> 
+        <% end %> 
 
-    <%= total/@movie.reviews.length %> 
+    <% if @movie.reviews.length != 0 %>
+        <%= total/@movie.reviews.length %> 
+    <% end%>
+
