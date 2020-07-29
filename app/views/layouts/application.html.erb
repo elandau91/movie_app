@@ -9,7 +9,21 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <table>
+  <tbody>
+    <tr>
+      <td><%= link_to 'User Home', users_path %></td>
+      <td><%= link_to 'Movies', movies_path %></td>
+      <td><%= link_to 'New Review', new_review_path %></td>
+      <% if @current_user %>
+        <td class='right'>Welcome <%= @current_user.name %>!</td>
+        <td class='right'><%= link_to "Log-out", logout_path, method: :delete %></td>
+     <% else %>
+        <td class='right'><%= link_to 'Sign-up', new_user_path %></td>
+        <td class='right'><%= link_to 'Login', new_session_path %></td>
+      <% end %>
+    </tr>
+  </tbody>
+  </table>
+  <%= yield %>
 </html>
