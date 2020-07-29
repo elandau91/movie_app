@@ -32,13 +32,13 @@ require "themoviedb"
 # # etc.
 
 
-
+Review.destroy_all
 User.destroy_all
 Movie.destroy_all
-Review.destroy_all
+
 
 5.times do
-    User.create(name: Faker::FunnyName.name, username: Faker::Science.element)
+    User.create(name: Faker::FunnyName.name, username: Faker::Science.element, password_digest: rand(1..1000))
 end
 
 
@@ -61,7 +61,6 @@ m4.save
 m5 = Movie.new
 m5.search(Faker::Movie.title)
 m5.save
-
 
 
 # Movie.create(title: Faker::Movie.title, release_date: Faker::Number.number(digits: 6)  , poster: Faker::Avatar.image )
