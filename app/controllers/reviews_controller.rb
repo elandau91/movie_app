@@ -17,7 +17,13 @@ class ReviewsController < ApplicationController
 
             @review = Review.create(user_id: @current_user.id, movie_id: params[:review][:movie_id], rating: params[:review][:rating], content: params[:review][:content])
         end
-        redirect_to movie_path(@review.movie)
+
+        if @review.valid?
+            redirect_to movie_path(@review.movie)
+        else
+            flash[:errors] = @review.errors.full_messages
+            redirect_to movie_path(@review.movie)
+        end
 
     end
 
