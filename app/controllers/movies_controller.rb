@@ -9,6 +9,9 @@ class MoviesController < ApplicationController
     end
 
     def show
+
+        
+
         
         @movie = Movie.find_by(id: params[:id])
         if @movie && @movie.title != params[:name]
@@ -40,6 +43,7 @@ class MoviesController < ApplicationController
         @search.resource('movie') 
         @search.query(query) 
         @movie = @search.fetch 
+
     end
 
 
