@@ -1,15 +1,60 @@
-<h1>Login</h1>
 
-<% if flash[:error] %>
-  <p style="color: red;"><%= flash[:error] %></p>
-<% end %>
+<div class="login">
 
-<%= form_for :session, url: login_path do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="start_form">
+    <h1>Login</h1>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <% if flash[:error] %>
+      <p style="color: red;"><%= flash[:error] %></p>
+    <% end %>
 
-  <%= f.submit %>
-<% end %>
+    <%= form_for :session, url: login_path do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit %>
+    <% end %>
+    <br>
+<br>
+  </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>

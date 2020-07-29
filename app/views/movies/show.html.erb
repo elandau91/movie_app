@@ -3,15 +3,7 @@
     <p><img src="<%="https://image.tmdb.org/t/p/w200#{@movie.poster}"%>"></p>
     <p>Title: <%= @movie.title %></p>
     <p>Release date: <%= @movie.release_date %></p>
-    <p>Average rating:
-        <% total = 0.0 %>
-        <% @movie.reviews.each do |review| %>
-            <% total += review.rating %> 
-        <% end %> 
-
-    <% if @movie.reviews.length != 0 %>
-        <%= (total/@movie.reviews.length).round(2) %> 
-    <% end%> out of 10</p>
+    <p>Average rating: <%= @movie.average_rating.round(2) %> out of 10</p>
 
 <br>
 <h3>Reviews: </h3>
@@ -38,6 +30,15 @@
 
 <br>
 <h3>New Review:</h3>
+
+    <% if flash[:errors]%>
+        <% flash[:errors].each do |error|%>
+            <p><%= error %></p>
+        <% end%>
+    <% end%>
+
+
+
 <%= form_for @review do |f| %>
     <label>Movie: </label>
     <p><%= f.collection_select :movie_id, Array(@movie), :id, :title %></p>

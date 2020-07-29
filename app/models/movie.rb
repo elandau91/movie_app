@@ -4,7 +4,7 @@ Tmdb::Api.language("en")
 class Movie < ApplicationRecord
     has_many :reviews, dependent: :destroy
     has_many :users, through: :reviews
-
+    
 
     def search (input)
         @search = Tmdb::Search.new
@@ -20,6 +20,13 @@ class Movie < ApplicationRecord
 
     end
 
+
+    def average_rating
+        ratings = self.reviews.map {|review| review.rating}
+
+        #byebug
+        ratings.sum(0.0) / ratings.count
+    end
 
     def img_config 
         configuration = Tmdb::Configuration.new
