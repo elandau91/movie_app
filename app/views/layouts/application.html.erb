@@ -22,6 +22,10 @@
         <td class='right'><%= link_to 'Sign-up', new_user_path %></td>
         <td class='right'><%= link_to 'Login', new_session_path %></td>
       <% end %>
+      <td><%= form_tag(movies_search_path, :method => "get") do %>
+    <%= search_field_tag :query, params[:query], placeholder: "Search Movies" %>
+    <%= button_tag "Submit", :name => nil %>
+<% end%></td>
     </tr>
   </tbody>
   </table>
