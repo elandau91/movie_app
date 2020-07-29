@@ -16,7 +16,7 @@
       <td><%= link_to 'Movies', movies_path %></td>
       <td><%= link_to 'New Review', new_review_path %></td>
       <% if @current_user %>
-        <td class='right'>Welcome <%= @current_user.name %>!</td>
+        <td class='right'>Welcome <%= link_to @current_user.name, user_path(@current_user) %>!</td>
         <td class='right'><%= link_to "Log-out", logout_path, method: :delete %></td>
      <% else %>
         <td class='right'><%= link_to 'Sign-up', new_user_path %></td>
@@ -25,5 +25,6 @@
     </tr>
   </tbody>
   </table>
+
   <%= yield %>
 </html>

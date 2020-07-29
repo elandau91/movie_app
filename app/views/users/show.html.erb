@@ -29,9 +29,10 @@
                 <td><%= link_to review.movie.title, movie_path(review.movie) %></td>
                 <td><%= review.content %></td>
                 <td><%= review.rating %></td>
+                <td><%= button_to "Edit", edit_review_path(review), method: 'get' %></td>
+                <td><%= button_to "Delete", review_path(review), data: {:confirm => "Are you sure?"}, method: 'delete' %></td>
             </tr>
         <% end %>
     </tbody>
 </table>
-
 

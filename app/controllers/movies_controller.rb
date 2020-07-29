@@ -20,6 +20,8 @@ class MoviesController < ApplicationController
             @api_movie = Tmdb::Movie.detail(params[:id])
             @movie = Movie.new(title: @api_movie["original_title"], poster: @api_movie["poster_path"], release_date: @api_movie["release_date"])
         end
+    
+        @review = Review.find_or_create_by(user_id: @current_user.id, movie_id: @movie.id)
     end
 
 

@@ -13,3 +13,12 @@
         <%= total/@movie.reviews.length %> 
     <% end%>
 
+    <h3>Add to favorites</h3>
+        <%= form_for @review do |f| %>
+
+            <label>Favorite: </label>
+            <p><%= f.check_box :favorite %></p>
+
+            <%= f.submit "Submit" %>
+        <% end %>
+
