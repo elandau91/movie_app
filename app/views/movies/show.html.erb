@@ -3,13 +3,59 @@
     <p><img src="<%="https://image.tmdb.org/t/p/w200#{@movie.poster}"%>"></p>
     <p>Title: <%= @movie.title %></p>
     <p>Release date: <%= @movie.release_date %></p>
-    <p>Average rating:</p>
-        <% total = 0 %>
+    <p>Average rating:
+        <% total = 0.0 %>
         <% @movie.reviews.each do |review| %>
             <% total += review.rating %> 
         <% end %> 
 
     <% if @movie.reviews.length != 0 %>
-        <%= total/@movie.reviews.length %> 
+        <%= (total/@movie.reviews.length).round(2) %> 
+    <% end%> out of 10</p>
+
+<br>
+<h3>Reviews: </h3>
+<table>
+    <thead>
+        <tr>
+            <th> Username: </th>
+            <th> Content: </th>
+            <th> Rating: </th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% @movie.reviews.each do |review| %>
+            <tr>
+                <td><%= link_to review.user.username, user_path(review.user) %></td>
+                <td><%= review.content %></td>
+                <td><%= review.rating %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+<h3>New Review:</h3>
+<%= form_for @review do |f| %>
+    <label>Movie: </label>
+    <p><%= f.collection_select :movie_id, Array(@movie), :id, :title %></p>
+
+    <% if @api_movie != nil%>
+
+        <%= hidden_field :title, @movie.title %>
+        <%= hidden_field :poster, @movie.poster %>
+        <%= hidden_field :release_date, @movie.release_date %>
+
     <% end%>
+
+    <label>Content: </label>
+    <p><%= f.text_area :content %></p>
+
+    <label>Rating: </label>
+    <p><%= f.number_field :rating %></p>
+
+    <%= f.submit "Submit" %>
+<% end %>
 

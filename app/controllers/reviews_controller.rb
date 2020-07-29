@@ -6,8 +6,17 @@ class ReviewsController < ApplicationController
     end
     #need refactoring!! (with strong params)
     def create 
-        Review.create(user_id: @current_user.id, movie_id: params[:review][:movie_id], rating: params[:review][:rating], content: params[:review][:content])
-        redirect_to user_path(@current_user)
+        #byebug
+
+        if params[:title] != nil
+            @movie = Movie.create(title: params[:title].keys.join(""), poster: params[:poster].keys.join(""), release_date: params[:release_date].keys.join(""))
+            @review = Review.create(user_id: @current_user.id, movie_id: @movie.id, rating: params[:review][:rating], content: params[:review][:content])
+        else
+        #byebug
+
+            @review = Review.create(user_id: @current_user.id, movie_id: params[:review][:movie_id], rating: params[:review][:rating], content: params[:review][:content])
+        end
+        redirect_to movie_path(@review.movie)
     end
 
     def add_to_favorite
