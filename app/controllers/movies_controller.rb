@@ -25,7 +25,7 @@ class MoviesController < ApplicationController
             
         end
     
-        @review = Review.find_or_create_by(user_id: @current_user.id, movie_id: @movie.id)
+        
     end
 
 

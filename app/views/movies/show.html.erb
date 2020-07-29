@@ -57,6 +57,9 @@
     <label>Rating: </label>
     <p><%= f.number_field :rating %></p>
 
+    <label>Add to Favorite: </label>
+    <p><%= f.check_box :favorite %></p>
+
     <%= f.submit "Submit" %>
 <% end %>
 
