@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
         if @movie && @movie.title != params[:name]
             render :show
 
-        elsif Movie.find_by(title: params[:name])
+        elsif Movie.find_by(title: params[:name]) 
             @movie = Movie.find_by(title: params[:name])
             render :show
         else
