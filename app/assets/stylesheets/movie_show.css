@@ -1,0 +1,73 @@
+.big_movie {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: space-between;
+}
+
+
+.little_movie {
+    flex: 1;
+    display: inline-block;
+    margin: 10px;
+    border-style: solid;
+    padding: 10px;
+    border-color: white, 5px;
+    border-radius: 20px 20px;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.little_movie:hover, .mid_movie:hover {
+    background-color: white;
+    color: black;
+}
+
+.little_movie:hover a, .mid_movie:hover a {
+    background-color: white;
+    color: black;
+}
+
+
+.mid_movie {
+    flex: 2;
+    display: inline-block;
+    margin: 10px;
+    border-style: solid;
+    padding: 10px;
+    border-color: white, 5px;
+    border-radius: 20px 20px;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out;
+}
+
+
+/* .mid_movie table {
+    text-align: center;
+} */
+
+.mid_movie table, th, td {
+    border: 1px solid white;
+}
+
+.mid_movie th, td {
+    padding: 10px;
+}
+
+.mid_movie:hover table {
+    border: 1px solid black;
+}
+
+.mid_movie:hover table th {
+    border: 1px solid black;
+}
+
+.mid_movie:hover table td {
+    border: 1px solid black;
+}
+
+.title {
+    text-align: center;
+}
