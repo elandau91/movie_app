@@ -28,6 +28,28 @@ class UsersController < ApplicationController
         end 
     end
 
+    def follow
+        @user = User.find_by(id: params[:id])
+        @current_user.followees << @user 
+        #redirect_to user_path(@user)
+        render :show   ## either ways works !
+    end 
+
+    def unfollow
+        @user = User.find_by(id: params[:id])
+        @current_user.followed_users.find_by(followee_id: @user.id).destroy
+        redirect_to user_path(@user)
+    end
+
+    def followers_list
+        @user = User.find_by(id: params[:id])
+
+    end 
+
+    def followees_list
+        @user = User.find_by(id: params[:id])
+    end 
+
     private
 
     def s_params
