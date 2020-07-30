@@ -1,0 +1,23 @@
+
+.login {
+    background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2013/12/26/205901/e0389e2031c3b353637bb0c3c5739117.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 50px; */
+}
+
+.start_form {
+    background-color: black;
+    color: white;
+    padding: 50px;
+    display: inline-block;
+    opacity: .9;
+    border-style: solid;
+    border-color: white, 5px;
+    border-radius: 20px 20px;
+}
