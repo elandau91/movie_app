@@ -1,10 +1,16 @@
-<h1> User: <%= @user.name %> </h1>
+<br>
+<div class="name">
+<h1><%= @user.name %>'s Home Page </h1>
+</div>
 
+<div class="big_info">
+
+<div class="little_info">
 <p>Name: <%= @user.name %></p>
 <p>Username: <%= @user.username %></p>
 
 <br><br>
-<div id="followers"> 
+
     <table>
         <thead>
             <tr>
@@ -20,7 +26,7 @@
             </tr>
         </tbody>
     </table>
-</div>
+
 
 
 <% if @current_user == @user %>
@@ -30,37 +36,40 @@
 <% else %>
     <h4><%= button_to "Follow #{@user.username}", follow_user_path, method: "post" %></h4>
 <% end %>
-
-
-<br>
-<div id="favorites">
-    <h3>Favorites:</h3>
-    <table>
-        <thead>
-            <tr>
-            <% @user.reviews.each do |review| %>
-                <% if review.favorite %>
-                    <th><%= link_to review.movie.title, movie_path(review.movie) %></th>
-                <% end %>
-            <% end %>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <% @user.reviews.each do |review| %>
-                <% if review.favorite %>
-                    <td><img src="<%="https://image.tmdb.org/t/p/w200#{review.movie.poster}"%>"></td>
-                <% end %>
-            <% end %>
-            </tr>
-        </tbody>
-    </table>
 </div>
-<br><br><br>
 
-<div id="reviews">
+
+<div class="info"> 
+    <h3>Favorites:</h3>
+    <div class="big_faves">
+    
+   
+            <% @user.reviews.each do |review| %>
+                <% if review.favorite %>
+                <div class="little_faves">
+                    <table align="center">
+                        <thead>
+                            <tr>
+                                <th><%= link_to review.movie.title, movie_path(review.movie) %></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="<%="https://image.tmdb.org/t/p/w200#{review.movie.poster}"%>"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <% end %>
+            <% end %>
+    </div>
+</div>
+
+
+
+<div class="info"> 
     <h3>Reviews: </h3>
-    <table>
+    <table align="center">
     <thead>
         <tr>
             <th> Movie: </th>
@@ -82,5 +91,12 @@
         <% end %>
     </tbody>
     </table>
+</div>
+
+<br>
+
+<br><br><br>
+
+
 </div>
 
