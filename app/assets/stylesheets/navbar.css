@@ -46,3 +46,8 @@
 .nav_bar li:hover {
     background-color: white;
 }
+
+.nav_bar li:hover a {
+    background-color: white;
+    color: black;
+}

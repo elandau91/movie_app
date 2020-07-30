@@ -4,15 +4,23 @@
     <%= search_field_tag :query, params[:query], placeholder: "Search" %>
     <%= button_tag "Submit", :name => nil %>
 <% end%>
+<br>
+<br>
+
+<div class="parent">
 
 <% if @results %>
-<ul>
+
     <% @results.first(5).each do |result|%>
-        <li>Film: <%= link_to result["original_title"], "/movies/#{result["id"]}/?name=#{result["original_title"]}" %> </li>
-        <li>Release Date: <%= result["release_date"] %></li>
+    <div class="inner">
+        <p>Film: <%= link_to result["original_title"], "/movies/#{result["id"]}/?name=#{result["original_title"]}" %> </p>
+        <p>Release Date: <%= result["release_date"] %></p>
         <p><img src="<%="https://image.tmdb.org/t/p/w200#{result["poster_path"]}"%>" alt="film poster"></p>
         <br>
         <br>
+    </div>
     <% end%>
-</ul>
+
 <% end%>
+
+</div>
