@@ -1,16 +1,105 @@
-#followers {
-    box-sizing: border-box;
-    width: 200px;
-    height: 100px;
-    padding: 30px;
-    border: 3px solid white;
-    border-radius: 30px;
+.name {
+    text-align: center;
 }
 
-#reviews {
-    margin-bottom: 40px;
+.big_info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: space-between;
 }
 
-body {
-    margin-left: 20px;
+
+.info {
+    flex: 1;
+    display: inline-block;
+    margin: 10px;
+    border-style: solid;
+    padding: 10px;
+    border-color: white, 5px;
+    border-radius: 20px 20px;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.little_info {
+    text-align: left;
+    flex: .15;
+    display: inline-block;
+    margin: 10px;
+    border-style: solid;
+    padding: 10px;
+    border-color: white, 5px;
+    border-radius: 20px 20px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.little_info:hover {
+    background-color: white;
+    color: black;
+}
+
+.little_info:hover a {
+    background-color: white;
+    color: black;
+}
+
+.little_info:hover table {
+    border: 1px solid black;
+}
+
+.little_info:hover table th {
+    border: 1px solid black;
+}
+
+.little_info:hover table td {
+    border: 1px solid black;
+}
+
+
+.big_faves {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: space-between;
+}
+
+.little_faves {
+    flex: 1;
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+.info:hover {
+    background-color: white;
+    color: black;
+}
+
+.info:hover a {
+    background-color: white;
+    color: black;
+}
+
+.info table, th, td {
+    border: 1px solid white;
+}
+
+.info th, td {
+    padding: 10px;
+}
+
+.info:hover table {
+    border: 1px solid black;
+}
+
+.info:hover table th {
+    border: 1px solid black;
+}
+
+.info:hover table td {
+    border: 1px solid black;
 }
