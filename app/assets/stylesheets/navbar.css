@@ -1,0 +1,48 @@
+/* All CSS for Navbar */
+
+.nav_bar {
+    background-color: black;
+    color: white;
+    padding: 9px;
+    border-style: solid;
+    border-color: white, 5px;
+    border-radius: 10px 10px;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.nav_bar .left {
+    display: inline-block;
+    text-decoration: none;
+    padding: 2.5px 10px;
+    border: 1px solid white;
+    margin: 0 10px;
+    border-radius: 5px 5px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+
+#nav_bar_search {
+    display: inline;
+    float: right;
+    margin-right: 50px;
+    list-style-type: none;
+}
+
+.nav_bar .left a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.nav_bar .left a:hover, a:active {
+    text-decoration: underline;
+    color: black;
+}
+
+.nav_bar li:hover {
+    background-color: white;
+}

@@ -14,60 +14,13 @@
  *= require_self
  */
 
-.login {
-    background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2013/12/26/205901/e0389e2031c3b353637bb0c3c5739117.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+html {
+    margin-top: 65px;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-}
-
-.start_form {
     background-color: black;
-    color: white;
-    padding: 50px;
-    display: inline-block;
-    opacity: .9;
-    border-style: solid;
-    border-color: white, 5px;
-    border-radius: 20px 20px;
 }
 
-.nav_bar {
-    background-color: black;
-    color: white;
-    padding: 10px;
-    border-style: solid;
-    border-color: white, 5px;
-    border-radius: 10px 10px;
-    z-index: 9999;
-    top: 0;
-    width: 100%;
-    position: fixed;
-}
-
-.nav_bar li {
-    display: inline-block;
-    text-decoration: none;
-    padding: 0px 10px;
-}
-
-.nav_bar_search {
-    display: inline;
-    float: right;
-    margin-right: 50px;
-}
-
-.nav_bar a:link, a:visited {
+html a:link, a:visited {
     text-decoration: none;
     color: white;
-}
-
-.nav_bar a:hover, a:active {
-    text-decoration: underline;
-    color: aqua;
 }

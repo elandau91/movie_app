@@ -12,17 +12,17 @@
 <div class="nav_bar">
   
     <ul>
-      <li><%= link_to 'User Home', users_path %></li>
-      <li><%= link_to 'Movies', movies_path %></li>
-      <li><%= link_to 'New Review', new_review_path %></li>
+      <li class='left'><%= link_to 'User Home', users_path %></li>
+      <li class='left'><%= link_to 'Movies', movies_path %></li>
+      <li class='left'><%= link_to 'New Review', new_review_path %></li>
       <% if @current_user %>
-        <li class='right'>Welcome <%= link_to @current_user.name, user_path(@current_user) %>!</li>
-        <li class='right'><%= link_to "Log-out", logout_path, method: :delete %></li>
+        <li class='left'><%= link_to "Welcome #{@current_user.name}!", user_path(@current_user) %></li>
+        <li class='left'><%= link_to "Log-out", logout_path, method: :delete %></li>
      <% else %>
-        <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
-        <li class='right'><%= link_to 'Login', new_session_path %></li>
+        <li class='left'><%= link_to 'Sign-up', new_user_path %></li>
+        <li class='left'><%= link_to 'Login', new_session_path %></li>
       <% end %>
-      <div class="nav_bar_search">
+      <div id="nav_bar_search">
         <li><%= form_tag(movies_search_path, :method => "get") do %>
           <%= search_field_tag :query, params[:query], placeholder: "Search Movies" %>
           <%= button_tag "Submit", :name => nil %>
