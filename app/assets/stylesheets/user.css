@@ -1,0 +1,16 @@
+#followers {
+    box-sizing: border-box;
+    width: 200px;
+    height: 100px;
+    padding: 30px;
+    border: 3px solid white;
+    border-radius: 30px;
+}
+
+#reviews {
+    margin-bottom: 40px;
+}
+
+body {
+    margin-left: 20px;
+}

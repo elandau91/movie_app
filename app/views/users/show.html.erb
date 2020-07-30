@@ -2,8 +2,26 @@
 
 <p>Name: <%= @user.name %></p>
 <p>Username: <%= @user.username %></p>
-<p>Followers: <%=link_to @user.followers.length, followers_list_path %></p>
-<p>Followed: <%=link_to @user.followees.length, followees_list_path %></p>
+
+<br><br>
+<div id="followers"> 
+    <table>
+        <thead>
+            <tr>
+                <th>Followers</th>
+                <th>Followed</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%=link_to @user.followers.length, followers_list_path %></td>
+                <td><%=link_to @user.followees.length, followees_list_path %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 
 <% if @current_user == @user %>
     <h4><%= "#{@current_user.username}'s page" %></h4>
@@ -15,17 +33,34 @@
 
 
 <br>
-<h3>Favorites:</h3>
-    <% @user.reviews.each do |review| %>
-        <% if review.favorite %>
-            <p><%= link_to review.movie.title, movie_path(review.movie) %></p>
-        <% end %>
-    <% end %>
-
+<div id="favorites">
+    <h3>Favorites:</h3>
+    <table>
+        <thead>
+            <tr>
+            <% @user.reviews.each do |review| %>
+                <% if review.favorite %>
+                    <th><%= link_to review.movie.title, movie_path(review.movie) %></th>
+                <% end %>
+            <% end %>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <% @user.reviews.each do |review| %>
+                <% if review.favorite %>
+                    <td><img src="<%="https://image.tmdb.org/t/p/w200#{review.movie.poster}"%>"></td>
+                <% end %>
+            <% end %>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <br><br><br>
 
-<h3>Reviews: </h3>
-<table>
+<div id="reviews">
+    <h3>Reviews: </h3>
+    <table>
     <thead>
         <tr>
             <th> Movie: </th>
@@ -46,5 +81,6 @@
             </tr>
         <% end %>
     </tbody>
-</table>
+    </table>
+</div>
 

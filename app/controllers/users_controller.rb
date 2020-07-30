@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     skip_before_action :authorized, only: [:new, :create]
 
     def index
-        @users = User.all
+        @users = User.all.sort{|a, b| b.followers.size <=> a.followers.size}
     end
 
     def show
@@ -31,8 +31,8 @@ class UsersController < ApplicationController
     def follow
         @user = User.find_by(id: params[:id])
         @current_user.followees << @user 
-        #redirect_to user_path(@user)
-        render :show   ## either ways works !
+        redirect_to user_path(@user)
+        #render :show   ## either ways works !
     end 
 
     def unfollow
