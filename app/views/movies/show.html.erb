@@ -1,13 +1,21 @@
-<h1> Movie: <%=@movie.title%> </h1>
+<br>
+<div class="title">
+<h1><%=@movie.title%> </h1>
+</div>
+<div class="big_movie">
 
+    <div class="little_movie">
     <p><img src="<%="https://image.tmdb.org/t/p/w200#{@movie.poster}"%>"></p>
     <p>Title: <%= @movie.title %></p>
     <p>Release date: <%= @movie.release_date %></p>
     <p>Average rating: <%= @movie.average_rating.round(2) %> out of 10</p>
 
 <br>
+</div>
+
+<div class="mid_movie">
 <h3>Reviews: </h3>
-<table>
+<table align="center">
     <thead>
         <tr>
             <th> Username: </th>
@@ -27,8 +35,10 @@
         <% end %>
     </tbody>
 </table>
-
 <br>
+</div>
+
+<div class="little_movie">
 <h3>New Review:</h3>
 
     <% if flash[:errors]%>
@@ -63,5 +73,6 @@
 
     <%= f.submit "Submit" %>
 <% end %>
+</div>
 
-
+</div>

@@ -38,8 +38,8 @@
     color: white;
 }
 
+
 .nav_bar .left a:hover, a:active {
-    text-decoration: underline;
     color: black;
 }
 
