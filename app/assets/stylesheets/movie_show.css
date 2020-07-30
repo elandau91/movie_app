@@ -26,7 +26,6 @@
 }
 
 .little_movie:hover a, .mid_movie:hover a {
-    background-color: white;
     color: black;
 }
 
