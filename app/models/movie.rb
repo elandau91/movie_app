@@ -35,4 +35,8 @@ class Movie < ApplicationRecord
         configuration.poster_sizes
     end
 
+    def self.sort_average
+         self.all.sort_by{|movie| movie.average_rating}.reverse!
+    end
+
 end
