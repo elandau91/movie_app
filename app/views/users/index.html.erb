@@ -1,5 +1,21 @@
-<h1>Users</h1>
+<h1>Popular users:</h1>
 
-<% @users.each do |user| %>
-    <p><%= link_to user.name, user_path(user) %></p> 
-<% end %> 
+<div id="user_follows">
+    <table>
+        <thead>
+            <tr>
+                <th>Users</th>
+                <th>Followers</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @users.each do |user| %>
+            <tr>
+                <td ><%= link_to user.name, user_path(user) %></td>
+                <td ><%= link_to user.followers.size, followers_list_path(user) %></td>
+            <% end %>    
+            </tr>
+       </tbody>
+    </table>     
+</div>
