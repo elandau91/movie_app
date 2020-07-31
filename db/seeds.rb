@@ -35,6 +35,7 @@ require "themoviedb"
 Review.destroy_all
 User.destroy_all
 Movie.destroy_all
+Follow.destroy_all
 
 
 5.times do
@@ -62,12 +63,28 @@ m5 = Movie.new
 m5.search(Faker::Movie.title)
 m5.save
 
+m6 = Movie.new
+m6.search(Faker::Movie.title)
+m6.save
+
+m7 = Movie.new
+m7.search(Faker::Movie.title)
+m7.save
+
+m8 = Movie.new
+m8.search(Faker::Movie.title)
+m8.save
+
 
 # Movie.create(title: Faker::Movie.title, release_date: Faker::Number.number(digits: 6)  , poster: Faker::Avatar.image )
 
 
 20.times do
     Review.create(user_id: User.all.sample.id, movie_id: Movie.all.sample.id, rating: rand(1..10), content: Faker::Movie.quote, favorite: Faker::Boolean.boolean)
+end
+
+15.times do
+    Follow.create(follower_id: User.all.sample.id, followee_id: User.all.sample.id)
 end
 
 puts "done!"
