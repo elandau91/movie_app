@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
 
     def update
         @review = Review.find_by(id: params[:id])
-        @review.update(user_id: @current_user.id, movie_id: params[:review][:movie_id], rating: params[:review][:rating], content: params[:review][:content])
+        @review.update(user_id: @current_user.id, movie_id: params[:review][:movie_id], rating: params[:review][:rating], content: params[:review][:content], favorite: params[:review][:favorite])
         redirect_to user_path(@current_user)
     end
 
