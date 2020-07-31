@@ -42,7 +42,6 @@
 }
 
 .little_info:hover a {
-    background-color: white;
     color: black;
 }
 
@@ -80,7 +79,6 @@
 }
 
 .info:hover a {
-    background-color: white;
     color: black;
 }
 

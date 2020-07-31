@@ -1,3 +1,48 @@
-#user_follows {
+/* #user_follows {
     font-size: larger;
+} */
+
+.pop_users {
+    background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2013/12/26/205901/e0389e2031c3b353637bb0c3c5739117.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 50px; */
+}
+
+.user_follows {
+    background-color: black;
+    color: white;
+    padding: 50px;
+    display: inline-block;
+    opacity: .9;
+    border-style: solid;
+    border-color: white, 5px;
+    border-radius: 20px 20px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.user_follows:hover table {
+    border: 1px solid black;
+}
+
+.user_follows:hover table th {
+    border: 1px solid black;
+}
+
+.user_follows:hover table td {
+    border: 1px solid black;
+}
+
+.user_follows:hover {
+    background-color: white;
+    color: black;
+}
+
+.user_follows:hover a {
+    color: black;
 }

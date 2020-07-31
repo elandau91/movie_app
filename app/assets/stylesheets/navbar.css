@@ -48,6 +48,5 @@
 }
 
 .nav_bar li:hover a {
-    background-color: white;
     color: black;
 }
