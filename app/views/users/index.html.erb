@@ -1,12 +1,12 @@
 <br>
 <div class="pop_users">
+
+
+<div class="user_follows">
+
 <h1>Popular users:</h1>
-</div>
-
-<div class="big_users">
-
-<div id="user_follows">
-    <table>
+<br>
+    <table align="center">
         <thead>
             <tr>
                 <th>Users</th>
@@ -17,7 +17,7 @@
         <tbody>
             <% @users.each do |user| %>
             <tr>
-                <td ><%= link_to user.name, user_path(user) %></td>
+                <td ><%= link_to user.username, user_path(user) %></td>
                 <td ><%= link_to user.followers.size, followers_list_path(user) %></td>
             <% end %>    
             </tr>
@@ -25,4 +25,16 @@
     </table>     
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </div>

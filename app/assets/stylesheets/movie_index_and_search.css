@@ -28,3 +28,7 @@
 .inner:hover a {
     color: black;
 }
+
+.center_titles {
+    text-align: center;
+}

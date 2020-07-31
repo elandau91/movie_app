@@ -1,5 +1,6 @@
 
 <br>
+<div class="center_titles">
 <h1> Movies Home </h1>
 
 <h3>Search Movies</h3>
@@ -11,15 +12,16 @@
 <br>
 
 
-<h3>Top Rated Movies</h3>
 
+<h3>Top Rated Movies</h3>
+</div>
 <div class="parent">
   
         <% @movies.sort_average.each do |movie| %>
                 <div class="inner">
                 <p>Title: <%= link_to movie.title, movie_path(movie) %></p>
                 <p>Release Date: <%= movie.release_date %></p>
-                <p>Poster: <img src="<%="https://image.tmdb.org/t/p/w200#{movie.poster}"%>"></p>
+                <p><img src="<%="https://image.tmdb.org/t/p/w200#{movie.poster}"%>"></p>
                 </div>
         <% end %> 
   
